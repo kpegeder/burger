@@ -1,24 +1,28 @@
-const orm = require("./config/orm.js");
+const express = require("express");
 
-orm.select("burgers", function (result) {
-  var data = result;
-  console.log(data);
-});
+const PORT = process.env.PORT || 8080;
 
-orm.insert(
-  "burgers",
-  ["burger_name", "devoured"],
-  ["Impossible Burger", "false"],
-  function (result) {
-    var data = result;
-    // console.log(data);
-  }
-);
+const app = express();
 
-condition = "id" + " = " + "2";
-console.log(condition);
+// Server static content for the app from public
+app.use(express.static("public"));
 
-orm.update("burgers", { devoured: true }, condition, function (result) {
-  var data = result;
-  // console.log(data);
-});
+// Parse application body as JSON
+app.use(express.urlencoded({ extended: true}));
+app.use(express.json());
+
+// Set Handlebars
+const exphbs = require("express-handlebars");
+
+app.engine("handlebars", exphbs({ defaultLayout: "main"}));
+app.set("view engine", "handlebars");
+
+// Import routes and give the server access to them
+const routes = require("./controllers/burgers_controller.js");
+
+app.use(routes);
+
+// Start server
+app.listen(PORT, function() {
+  console.log("Server listening on: http://localhost:" + PORT);
+})
