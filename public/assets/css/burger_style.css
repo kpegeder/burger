@@ -1,19 +1,38 @@
 li {
   padding: 5px;
   margin: 5px;
-  background: #faebd7;
 }
 
 .label {
   font-weight: bold;
 }
 
-.create-update-form {
+.create-form {
   padding: 5px;
   margin: 5px;
-  background: aqua;
 }
 
 .form-group {
   margin-bottom: 5px;
+}
+
+h1,
+h2 {
+  text-align: center;
+}
+
+.burger-header {
+  background: pink;
+}
+
+body {
+  background: aliceblue;
+}
+
+.burger-img {
+  width: 50%;
+}
+
+.img-tag {
+  text-align: center;
 }
