@@ -3,7 +3,6 @@ $(function () {
     let id = $(this).data("id");
     let newDevour = $(this).data("newdevour");
 
-    console.log(id);
     let newBurgerState = {
       devoured: newDevour,
     };

@@ -3,13 +3,14 @@ li {
   margin: 5px;
 }
 
-.label {
-  font-weight: bold;
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
-.create-form {
-  padding: 5px;
-  margin: 5px;
+.label {
+  font-weight: bold;
 }
 
 .form-group {
@@ -21,18 +22,47 @@ h2 {
   text-align: center;
 }
 
+h1 {
+  font-size: 3rem !important;
+}
+
+h2 {
+  font-weight: 300 !important;
+}
+
 .burger-header {
-  background: pink;
+  background: #f78cab;
+  padding: 1.5rem;
 }
 
 body {
-  background: aliceblue;
+  background: #d6b25d !important;
 }
 
 .burger-img {
   width: 50%;
+  border-radius: 1.2rem;
 }
 
 .img-tag {
+  text-align: center;
+  margin: 2rem;
+}
+
+.col-sm-4,
+.col-sm-3 {
+  background: #d7d6d2;
+  border-radius: 10px;
+  border: 2px solid #fffdf9;
+  margin: 10px 20px;
+  padding: 10px;
+}
+
+.row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.col-sm-3 {
   text-align: center;
 }
