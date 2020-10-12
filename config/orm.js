@@ -56,8 +56,6 @@ const orm = {
     queryString += printQuestionMarks(vals.length);
     queryString += ") ";
 
-    console.log(queryString);
-
     connection.query(queryString, vals, function (err, result) {
       if (err) {
         throw err;
@@ -78,6 +76,17 @@ const orm = {
       if (err) {
         throw err;
       }
+
+      cb(result);
+    });
+  },
+  delete: function (table, condition, cb) {
+    let queryString = "DELETE FROM " + table;
+    queryString += " WHERE ";
+    queryString += condition;
+
+    connection.query(queryString, function (err, result) {
+      if (err) throw err;
 
       cb(result);
     });

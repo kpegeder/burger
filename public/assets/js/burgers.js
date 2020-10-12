@@ -25,12 +25,27 @@ $(function () {
     let newBurger = {
       name: $("#burg").val().trim(),
     };
+    if (newBurger.name != "") {
+      $.ajax("/api/burgers", {
+        type: "POST",
+        data: newBurger,
+      }).then(function () {
+        console.log("Created a new burger");
+        // Reload the page to get the updated list
+        location.reload();
+      });
+    } else {
+      alert("Can't enter a blank burger");
+    }
+  });
 
-    $.ajax("/api/burgers", {
-      type: "POST",
-      data: newBurger,
+  $(".delete-burger").on("click", function (event) {
+    let id = $(this).data("id");
+
+    $.ajax("/api/burgers/" + id, {
+      type: "DELETE",
     }).then(function () {
-      console.log("Created a new burger");
+      console.log("Deleted burger", id);
       // Reload the page to get the updated list
       location.reload();
     });

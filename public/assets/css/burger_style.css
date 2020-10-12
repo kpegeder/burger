@@ -33,6 +33,7 @@ h2 {
 .burger-header {
   background: #f78cab;
   padding: 1.5rem;
+  border-bottom: 2px solid #fffdf9;
 }
 
 body {
@@ -42,6 +43,7 @@ body {
 .burger-img {
   width: 50%;
   border-radius: 1.2rem;
+  border: 2px solid #fffdf9;
 }
 
 .img-tag {
@@ -50,7 +52,7 @@ body {
 }
 
 .col-sm-4,
-.col-sm-3 {
+.col-sm-5 {
   background: #d7d6d2;
   border-radius: 10px;
   border: 2px solid #fffdf9;
@@ -63,6 +65,22 @@ body {
   margin-right: 0px !important;
 }
 
-.col-sm-3 {
+.create-form {
   text-align: center;
+}
+
+.change-devour {
+  margin-left: 1rem;
+}
+
+button {
+  border-radius: 4px !important;
+  border: 2px solid #f78cab;
+  transition-duration: 0.4s;
+  color: black;
+}
+
+button:hover {
+  background-color: #f78cab;
+  color: black;
 }
