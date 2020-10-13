@@ -8,7 +8,7 @@ const burger = require("../models/burger.js");
 // Create all our routes and set up logic
 router.get("/", function (req, res) {
   burger.all(function (data) {
-    var hbsObject = {
+    let hbsObject = {
       burgers: data,
     };
 
